@@ -112,7 +112,13 @@ class _EmojiSelectorState extends State<EmojiSelector> {
 
   @override
   Widget build(BuildContext context) {
-    if (!_loaded) return Container();
+    if (!_loaded)
+      return Container(
+        color: Colors.transparent,
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
 
     int smileysNum = _groups[Category.smileys]!.pages.length;
     int animalsNum = _groups[Category.animals]!.pages.length;
